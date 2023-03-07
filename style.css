@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #121214;
+  --text-color: #FFFFFF;
+  --img-color: #C4C4CC;
+  --cards-bg: #29292e;
+  --card-active: #02799D;
+}
+
+:root .dark-mode{
+  --bg-color: #FFFFFF;
+  --text-color: #323238;
+  --img-color: #323238;
+  --cards-bg: #E1E1E6;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+main {
+  width: 821px;
+  display: flex;
+  gap: 192px;
+  margin: 196px auto;
+}
+
+header #mode {
+  position: absolute;
+  right: 60px;
+  top: 60px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;   
+}
+
+#mode:hover {
+  scale: 1.05;
+  transition: 0.4s;
+}
+
+.hide {
+  display: none;
+} 
+
+.timer {
+  display: flex;
+  font-family: 'Roboto', sans-serif;
+  font-size: 122px;
+  line-height: 148px;
+  gap: 10.35px;
+  padding-top: 58px;
+  padding-bottom: 10px;
+  color: var(--text-color);
+}
+
+.controls {
+  display: flex;
+  gap: 40px;
+  width: 312px;
+  height: 48px;
+}
+
+.controls svg {
+  background-color: var(--bg-color);
+}
+
+.controls svg path {
+  fill: var(--img-color);
+}
+
+.controls button {
+  border: none;
+}
+
+.sound {
+  row-gap: 32px;
+  column-gap: 32px;
+  display: grid;
+  grid-template-areas: 
+  'A B'
+  'C D';
+}
+
+.cards .card:nth-child(1) {
+  grid-area: A;
+}
+
+.cards .card:nth-child(2) {
+  grid-area: B;
+}
+
+.cards .card:nth-child(3) {
+  grid-area: C;
+}
+
+.cards .card:nth-child(4) {
+  grid-area: D;
+}
+
+.card svg path {
+  fill: var(--img-color);
+}
+
+.card svg:hover path {
+  fill: white;
+}
+
+.sound button {
+  background: var(--cards-bg);
+  width: 138px;
+  height: 152px;
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
+}
+
+.sound button.active {
+  background-color: var(--card-active);
+}
+
+button:hover  {
+  background: var(--card-active);
+}
+
+
+[type="range"] {
+  appearance: none;
+  background-color: var(--img-color);
+  height: 4px;
+  width: 90px;
+  border-radius: 4px;
+  margin-top: 32px;
+  cursor: pointer;
+}
+
+[type="range"]:hover,  [type="range"]::-webkit-slider-thumb:hover {
+  background: white;
+}
+
+[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background-color: var(--img-color);
+  border-radius: 10px;
+}
